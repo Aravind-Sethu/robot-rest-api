@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 import argparse
 import rospy
 from actionlib_msgs.msg import GoalStatusArray
