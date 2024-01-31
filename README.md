@@ -1,7 +1,14 @@
 # Description 
 
 This project consists of two Python scripts - a REST server and a REST client - designed to monitor the status of a robot controlled by the Robot Operating System (ROS). The REST server exposes an endpoint to provide the current status of the robot, while the REST client continuously queries this endpoint to display the status in real-time.
+
 We are using flask API for a lightweight web framework 
+
+Flask-RESTful is an extension for Flask that adds support for quickly building REST APIs. It is a lightweight abstraction that works with your existing ORM/libraries.
+
+The REST API server serves the GET endpoint /api/robot/status locally on port 7201.
+The API server communicates with ROS and pulls the status information from the /move_base/status topic.
+When called, the REST API endpoint provides a response containing the status and text fields from the /move_base/status topic. If the topic is not available, the REST API calls an error out with a 400 code and a Bad request message.
 
 ## Prerequisites
 * Linux
