@@ -95,15 +95,14 @@ export SVGA_VGPU10=0
 export TURTLEBOT3_MODEL=burger
 roslaunch turtlebot3_gazebo turtlebot3_world.launch
 ```
-
+![gazebo](https://github.com/Aravind-Sethu/robot-rest-api/assets/158305278/f1ca0f7e-1f3d-4e0e-ab3d-69791057ceec)
 
 ## Running the teleop(to control the bot)
 ```bash
 export TURTLEBOT3_MODEL=burger
 roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 ```
-
-
+![teleop](https://github.com/Aravind-Sethu/robot-rest-api/assets/158305278/63b1d7c0-7deb-48bd-af37-b32b6da4fba1)
 
 Check if the bot is moving using the 'waxd s ' keys
 
@@ -114,13 +113,14 @@ export TURTLEBOT3_MODEL=burger
 roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
 ```
 
-
+![slam](https://github.com/Aravind-Sethu/robot-rest-api/assets/158305278/2761e8fa-7620-4a94-8fab-d3488c341077)
 
 * after the world is mapped,save the map 
 * It will be saved in two files with extensions .yaml and .pgm
 
 ## map 
 
+![map](https://github.com/Aravind-Sethu/robot-rest-api/assets/158305278/43f6ee78-c376-4fb3-b205-03ca952ec617)
 
 
 * Once SLAM node is successfully up and running, TurtleBot3 will be exploring unknown area of the map using teleoperation. It is important to avoid vigorous movements such as changing the linear and angular speed too quickly. When building a map using the TurtleBot3, it is a good practice to scan every corner of the map.
@@ -158,12 +158,18 @@ run the following code to open rviz with the map made.
 export TURTLEBOT3_MODEL=burger
 roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/map.yaml
 ```
-
 * Click on 2D Pose estimation and click and drag to match the positon and direction of the bot located in the gazeboo simulation
  
+![2d_pose](https://github.com/Aravind-Sethu/robot-rest-api/assets/158305278/b50451b4-162e-47d4-b87e-a0b966f4c6a6)
+
+![2d estimate](https://github.com/Aravind-Sethu/robot-rest-api/assets/158305278/80006722-c716-420d-ae94-fe8c3fbda8ea)
+
 
 * Click on the 2D Nav Goal nd drag the final destination point to where the bot must reach
 
+![2d_nav](https://github.com/Aravind-Sethu/robot-rest-api/assets/158305278/92ee57e7-344a-4e89-8fc6-de31f8091593)
+
+![2d goal](https://github.com/Aravind-Sethu/robot-rest-api/assets/158305278/5fd06f02-723d-4992-9f42-c5b6aa17e75d)
 
 
 The bot will move to the final point without hitting any obstacles as mapped 
@@ -179,7 +185,6 @@ catkin_make
 roslaunch robot-rest-api server.launch
 ```
 
-
 * the luanch file contains the code to run the server side 
 
 ## Running of clients 
@@ -192,13 +197,16 @@ python read.py
 ## Test cases 
 
 * case of accepting the Goal
-  
 
+![goal accepted](https://github.com/Aravind-Sethu/robot-rest-api/assets/158305278/6d01688f-3167-46d8-8787-a002d5f13b59)
 
 * case of reaching the Goal
   
+![goal reached](https://github.com/Aravind-Sethu/robot-rest-api/assets/158305278/94f7ec62-2d37-4ae0-a513-4fcdc245c681)
 
 * Case of invalid message
+  
+![invalid status value](https://github.com/Aravind-Sethu/robot-rest-api/assets/158305278/272e95c6-4537-48f3-b963-535ef82a92ac)
 
 ## Refrences 
 
